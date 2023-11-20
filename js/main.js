@@ -303,13 +303,13 @@
 	$('#appointment_time').timepicker();
 
 
-	$('[data-target="#modalAppointment"]').click()
 	$('#send_appointment_message').on('click', function(event){
 		event.preventDefault();
 
 		// $('#form_appointment').serialize();
-		let myformjq = $('#form_appointment');
-		let myform = document.getElementById("form_appointment");
+		let formid = $(this).data('formid');
+		let myformjq = $('#'+formid);
+		let myform = document.getElementById(formid);
 		let fd = new FormData(myform );
 		let empty = false;
 		for(var pair of fd.entries()){
@@ -332,6 +332,9 @@
 			type: 'POST',
 			success: function (response) {
 				// do something with the result
+				if(formid == 'form_appointment'){
+					$("#modalAppointment").modal('hide')
+				}
 			}
 		});
 	});

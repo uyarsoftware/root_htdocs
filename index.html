@@ -434,21 +434,22 @@
 </div>
 <div class="row no-gutters block-9">
 <div class="col-md-6 order-md-last d-flex">
-<form action="#" class="bg-primary p-5 contact-form">
+<form action="#" id="form_contact" data-url="https://uyarss.co.uk/ajax/php/test.php">
 	<div class="form-group">
-	<input type="text" class="form-control" placeholder="Your Name">
+	<input type="text" class="form-control" name="contact_name" placeholder="Your Name">
 	</div>
 	<div class="form-group">
-	<input type="text" class="form-control" placeholder="Your Email">
+	<input type="text" class="form-control" name="contact_mail" placeholder="Your Email">
 	</div>
 	<div class="form-group">
-	<input type="text" class="form-control" placeholder="Subject">
+	<input type="text" class="form-control" name="contact_subj" placeholder="Subject">
 	</div>
 	<div class="form-group">
-	<textarea name id cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+	<textarea rows="7" class="form-control" name="contact_mesg" placeholder="Message" cols="30"></textarea>
 	</div>
 	<div class="form-group">
 	<input type="submit" value="Send Message" class="btn btn-darken py-3 px-5">
+	<button id="send_contact_message" class="btn btn-primary" data-formid="form_contact">Send Message</button>
 	</div>
 </form>
 </div>
@@ -527,7 +528,7 @@ Copyright &copy;<script data-cfasync="false" src="js/email-decode.min.js"></scri
 </button>
 </div>
 <div class="modal-body">
-<form action="#" id="form_appointment" data-url="https://uyarss.co.uk/ajax/php/show_post_data.php">
+<form action="#" id="form_appointment" data-url="https://uyarss.co.uk/ajax/php/test.php">
 	<div class="form-group">
 	<label for="appointment_name" class="text-black">Full Name</label>
 	<input type="text" class="form-control" id="appointment_name" name="appointment_name">
@@ -555,7 +556,7 @@ Copyright &copy;<script data-cfasync="false" src="js/email-decode.min.js"></scri
 	<textarea id="appointment_message" name="appointment_message" class="form-control" cols="30" rows="3"></textarea>
 	</div>
 	<div class="form-group">
-	<button id="send_appointment_message" class="btn btn-primary">Send Message</button>
+	<button id="send_appointment_message" class="btn btn-primary" data-formid="form_appointment">Send Message</button>
 	</div>
 </form>
 </div>
