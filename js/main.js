@@ -303,12 +303,13 @@
 	$('#appointment_time').timepicker();
 
 
-	$('[data-target="#modalAppointment"]').click()
 	$('#send_appointment_message').on('click', function(event){
 		event.preventDefault();
 
 		// $('#form_appointment').serialize();
-		let myform = document.getElementById("form_appointment");
+		let formid = $(this).data('formid');
+		let myformjq = $('#'+formid);
+		let myform = document.getElementById(formid);
 		let fd = new FormData(myform );
 		let empty = false;
 		for(var pair of fd.entries()){
@@ -318,9 +319,10 @@
 		}
 		let url = "php/test.php";
 		url = "php/show_post_data.php";
+		url = myformjq.data('url');
 		console.log(fd)
 		console.log(empty)
-		if(empty) return;
+		// if(empty) return;
 		$.ajax({
 			url: url,
 			data: fd,
@@ -330,6 +332,9 @@
 			type: 'POST',
 			success: function (response) {
 				// do something with the result
+				if(formid == 'form_appointment'){
+					$("#modalAppointment").modal('hide')
+				}
 			}
 		});
 	});
