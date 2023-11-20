@@ -308,6 +308,7 @@
 		event.preventDefault();
 
 		// $('#form_appointment').serialize();
+		let myformjq = $('#form_appointment');
 		let myform = document.getElementById("form_appointment");
 		let fd = new FormData(myform );
 		let empty = false;
@@ -318,9 +319,10 @@
 		}
 		let url = "php/test.php";
 		url = "php/show_post_data.php";
+		url = myformjq.data('url');
 		console.log(fd)
 		console.log(empty)
-		if(empty) return;
+		// if(empty) return;
 		$.ajax({
 			url: url,
 			data: fd,
