@@ -303,7 +303,7 @@
 	$('#appointment_time').timepicker();
 
 
-	$('#send_appointment_message').on('click', function(event){
+	$('.send_form_message').on('click', function(event){
 		event.preventDefault();
 
 		// $('#form_appointment').serialize();
