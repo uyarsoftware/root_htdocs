@@ -335,6 +335,8 @@
 				if(formid == 'form_appointment'){
 					$("#modalAppointment").modal('hide')
 				}
+				$('form input').val('')
+				$('form textarea').val('')
 			}
 		});
 	});
